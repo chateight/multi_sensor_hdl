@@ -7,3 +7,5 @@ to integrate some kinds of sensors into single build module
 1. environement sensor
 
 2. laser distance sensor
+
+3. IR thermo sensor
