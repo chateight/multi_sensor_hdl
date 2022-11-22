@@ -5,11 +5,6 @@
 Adafruit_MLX90614 mlx = Adafruit_MLX90614();
 
 int setup_thermo() {
-    M5.begin();
-    M5.Power.begin();
-    Wire.begin();
-
-    M5.Lcd.setRotation(3);
     M5.Lcd.setTextColor(WHITE);
     M5.Lcd.setTextSize(2);
     M5.Lcd.clear(BLACK);
