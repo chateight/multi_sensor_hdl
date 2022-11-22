@@ -4,4 +4,5 @@ to integrate some kinds of sensors into single build module
 
 <current support sensor>
 - environement sensor
+
 - laser distance sensor
