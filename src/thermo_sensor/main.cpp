@@ -12,9 +12,8 @@ int setup_thermo() {
 
     M5.Lcd.setRotation(3);
     M5.Lcd.setTextColor(WHITE);
-    M5.Lcd.setTextSize(3);
+    M5.Lcd.setTextSize(2);
     M5.Lcd.clear(BLACK);
-    M5.Lcd.setCursor(0, 40);
 
     mlx.begin();
     int ret = mlx.begin();
@@ -45,7 +44,7 @@ void loop_thermo() {
     temperature = result * 0.02 - 273.15;
 */
     M5.Lcd.fillRect(0, 40, 120, 100, BLACK);
-    M5.Lcd.setCursor(20, 100);
+    M5.Lcd.setCursor(50, 100);
 
     M5.Lcd.print(mlx.readObjectTempC());
     M5.Lcd.print(" degree");
