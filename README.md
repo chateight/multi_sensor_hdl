@@ -3,6 +3,6 @@
 to integrate some kinds of sensors into single build module
 
 <current support sensor>
-environement sensor
+1. environement sensor
 
-laser distance sensor
+2. laser distance sensor
