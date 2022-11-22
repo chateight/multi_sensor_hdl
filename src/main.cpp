@@ -32,6 +32,8 @@ void setup(void)
     dev_id = 1;
   } else if (setup_env() == 1){
     dev_id = 2;
+  } else if (setup_thermo() == 1){
+    dev_id = 3;
   }
   else{
     while(1){
@@ -44,8 +46,10 @@ void setup(void)
 void loop(void)
 {
   if(dev_id == 1){
-  loop_dist();
+    loop_dist();
   } else if(dev_id == 2){
-  loop_env();
+    loop_env();
+  } else if(dev_id == 3){
+    loop_thermo();
   }
 }
