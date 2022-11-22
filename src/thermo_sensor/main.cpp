@@ -8,7 +8,6 @@ int setup_thermo() {
     M5.begin();
     M5.Power.begin();
     Wire.begin();
-    Serial.begin(115200);
 
     M5.Lcd.setRotation(3);
     M5.Lcd.setTextColor(WHITE);
@@ -22,27 +21,13 @@ int setup_thermo() {
 
 
 void loop_thermo() {
-  // surface temp
-  Serial.print("Temperature : ");  Serial.println(mlx.readObjectTempC());
-  // ambient temp
-  Serial.print("Ambient : ");  Serial.println(mlx.readAmbientTempC());
-  Serial.print("emmisivity : ");  Serial.println(mlx.readEmissivity());
-  Serial.println();
+    // surface temp
+    Serial.print("Temperature : ");  Serial.println(mlx.readObjectTempC());
+    // ambient temp
+    Serial.print("Ambient : ");  Serial.println(mlx.readAmbientTempC());
+    Serial.print("emmisivity : ");  Serial.println(mlx.readEmissivity());
+    Serial.println();
 
-  /*
-    uint16_t result;
-    float temperature;
-    Wire.beginTransmission(0x5A);  // Send Initial Signal and I2C Bus Address
-    Wire.write(0x07);  // Send data only once and add one address automatically.
-    Wire.endTransmission(false);  // Stop signal
-    Wire.requestFrom(
-        0x5A,
-        2);  // Get 2 consecutive data from 0x5A, and the data is stored only.
-    result = Wire.read();        // Receive DATA
-    result |= Wire.read() << 8;  // Receive DATA
-
-    temperature = result * 0.02 - 273.15;
-*/
     M5.Lcd.fillRect(0, 40, 120, 100, BLACK);
     M5.Lcd.setCursor(50, 100);
 
