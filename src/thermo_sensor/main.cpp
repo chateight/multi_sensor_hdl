@@ -2,6 +2,7 @@
 #include "Adafruit_MLX90614.h"
 
 Adafruit_MLX90614 mlx = Adafruit_MLX90614();
+double emissivity = 0.95;
 
 int setup_thermo() {
     M5.Lcd.setTextColor(WHITE);
@@ -10,6 +11,7 @@ int setup_thermo() {
 
     mlx.begin();
     int ret = mlx.begin();
+    mlx.writeEmissivity(emissivity);
     return ret;
 }
 
