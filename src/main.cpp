@@ -3,6 +3,7 @@
 int dev_id = 9;
 
 void sensor_error(){
+  M5.Lcd.setTextSize(3);
   M5.Lcd.setTextColor(RED);
   M5.lcd.setCursor(50, 110);
   M5.lcd.fillScreen(BLACK);
@@ -34,6 +35,8 @@ void setup(void)
     dev_id = 2;
   } else if (setup_thermo() == 1){
     dev_id = 3;
+  } else if (setup_oxi() == 1){
+    dev_id = 4;
   }
   else{
     while(1){
@@ -51,5 +54,7 @@ void loop(void)
     loop_env();
   } else if(dev_id == 3){
     loop_thermo();
+  } else if(dev_id == 4){
+    loop_oxi();
   }
 }
