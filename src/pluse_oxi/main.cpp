@@ -29,6 +29,7 @@ int setup_oxi()
   // Initialize sensor
   if (!pox.begin()) {
     ret = 0;
+    return ret;
     for(;;);
    } else {
     ret = 1;

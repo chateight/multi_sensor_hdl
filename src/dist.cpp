@@ -33,13 +33,11 @@ int setup_dist()
   M5.lcd.setTextSize(2);  // Set the text size to 2. 
   M5.Lcd.setTextColor(WHITE);     // set font color to white
 
-  Serial.println("VL53L1X Qwiic Test");
-
   if (distanceSensor.begin() != 0) //Begin returns 0 on a good init
   {
     return ret_dist;
   }
-  Serial.println("Sensor online!");
+
   // initialise the port
   pinMode(port, OUTPUT);  
   digitalWrite(port, LOW);

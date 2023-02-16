@@ -77,7 +77,6 @@ int setup_env() {
     M5.Lcd.setTextColor(WHITE);     // set font color to white
     M5.lcd.fillScreen(BLACK);  // Fill the screen with black (to clear the screen).  
     int val = qmp6988.init();
-    Serial.println(val);
     return val;             // normally 1
 }
 
